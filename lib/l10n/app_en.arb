@@ -1,0 +1,5 @@
+{
+  "@@locale": "en",
+  "common$error": "Error",
+  "common$error$unknown": "Sorry, there was an unexpected error. Please try again later"
+}
