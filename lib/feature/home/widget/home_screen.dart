@@ -1,7 +1,9 @@
 import 'package:express/common/const/app_styles.dart';
 import 'package:express/common/widget/app_button.dart';
+import 'package:express/feature/app/widget/router/material_context.dart';
 import 'package:express/feature/auth/widget/auth_state_scope.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -186,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: AppColors.lightGray,
                       borderRadius: BorderRadius.circular(5),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () => context.push(RoutePaths.branch),
                         borderRadius: BorderRadius.circular(5),
                         splashColor: AppColors.dustyBlue.withOpacity(0.3),
                         child: Container(

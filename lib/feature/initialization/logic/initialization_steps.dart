@@ -4,7 +4,6 @@ import 'package:express/common/utils/interceptors.dart';
 import 'package:express/feature/auth/data/sources/auth_data_source.dart';
 import 'package:express/feature/auth/data/sources/token_manager.dart';
 import 'package:express/feature/auth/domain/repositories/auth_repository.dart';
-import 'package:express/feature/initialization/model/environment_store.dart';
 import 'package:express/feature/initialization/model/initialization_progress.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -30,9 +29,8 @@ mixin InitializationSteps {
       progress.dependencies.flutterSecureStorage = flutterSecureStorage;
     },
     'Rest client': (progress) async {
-      final restClientDio = Dio(BaseOptions(baseUrl: EnvironmentStore.baseUrl))
+      final restClientDio = Dio(BaseOptions(baseUrl: progress.environmentStore.baseUrl))
         ..interceptors.add(PrettyDioLogger(requestHeader: true, requestBody: true));
-
       progress.dependencies.restClientDio = restClientDio;
     },
     'Token Manager': (progress) async {

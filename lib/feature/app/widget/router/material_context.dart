@@ -81,6 +81,12 @@ final GoRouter appRouter = GoRouter(
                   name: 'home',
                   path: RoutePaths.home,
                   builder: (context, state) => const HomeScreen(),
+                  routes: [
+                    GoRoute(
+                      path: RoutePaths.branch,
+                      builder: (context, state) => const BranchScreen(),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -204,7 +210,7 @@ class MaterialContext extends StatelessWidget {
           ),
         ),
       ),
-      routerConfig: appRouter, // Pass the extracted router instance
+      routerConfig: appRouter,
     );
   }
 }

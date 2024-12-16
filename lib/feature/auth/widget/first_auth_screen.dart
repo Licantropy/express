@@ -2,7 +2,6 @@ import 'package:express/common/const/app_styles.dart';
 import 'package:express/common/utils/input_masks.dart';
 import 'package:express/common/widget/app_button.dart';
 import 'package:express/feature/auth/widget/auth_scope.dart';
-import 'package:express/feature/auth/widget/auth_state_scope.dart';
 import 'package:express/feature/auth/widget/auth_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -57,11 +56,6 @@ class _FirstAuthScreenState extends State<FirstAuthScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton(
-                onPressed: () {
-                  print(AuthStateScope.isAuthorized(context));
-                },
-                child: Text('check')),
             const Text(
               'Добро пожаловать! Мы рады видеть вас среди наших клиентов.',
               textAlign: TextAlign.center,
