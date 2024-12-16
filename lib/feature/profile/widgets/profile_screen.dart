@@ -1,7 +1,6 @@
 import 'package:express/common/const/app_styles.dart';
 import 'package:express/feature/app/widget/router/material_context.dart';
 import 'package:express/feature/auth/widget/auth_state_scope.dart';
-import 'package:express/feature/initialization/widget/dependencies_scope.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

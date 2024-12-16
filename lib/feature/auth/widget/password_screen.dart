@@ -43,7 +43,6 @@ class _PasswordScreenState extends State<PasswordScreen> {
         ),
       );
     } else {
-      print(error);
       InfoScope.of(context).showErrorSnackBar(error);
     }
   }

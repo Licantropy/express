@@ -1,5 +1,4 @@
 import 'package:express/feature/app/widget/router/material_context.dart';
-import 'package:express/feature/auth/bloc/auth_bloc.dart';
 import 'package:express/feature/auth/widget/auth_state_scope.dart';
 import 'package:express/feature/initialization/model/dependencies.dart';
 import 'package:express/feature/initialization/widget/dependencies_scope.dart';

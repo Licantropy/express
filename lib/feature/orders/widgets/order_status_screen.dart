@@ -117,7 +117,7 @@ class DeliveryCard extends StatelessWidget {
   final VoidCallback onTrack;
 
   const DeliveryCard({
-    Key? key,
+    super.key,
     required this.date,
     required this.location,
     required this.itemName,
@@ -125,7 +125,7 @@ class DeliveryCard extends StatelessWidget {
     required this.status,
     required this.imageUrl,
     required this.onTrack,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
