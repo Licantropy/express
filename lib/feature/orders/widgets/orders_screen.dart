@@ -1,7 +1,7 @@
 import 'package:express/common/const/app_styles.dart';
 import 'package:express/common/widget/app_button.dart';
+import 'package:express/common/widget/custom_list_item.dart';
 import 'package:express/feature/app/widget/router/material_context.dart';
-import 'package:express/feature/profile/widgets/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
