@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:express/common/utils/logger.dart';
+import 'package:express/feature/auth/data/dto/login/login_dto.dart';
+import 'package:express/feature/auth/data/dto/registration/registration_dto.dart';
 import 'package:express/feature/auth/data/dto/token_pair/token_pair_dto.dart';
 import 'package:express/feature/auth/data/params/first_auth_params.dart';
 import 'package:express/feature/auth/data/params/login_params.dart';
@@ -24,7 +26,7 @@ abstract interface class AuthDataSource {
   ///
   /// Returns:
   ///   [FutureOr<TokenPairDto>]: The token pair data transfer object containing access and refresh tokens.
-  FutureOr<TokenPairDto> login({required LoginParams params});
+  FutureOr<LoginDto> login({required LoginParams params});
 
   /// Asynchronously registers a new user.
   ///
@@ -39,7 +41,7 @@ abstract interface class AuthDataSource {
   ///
   /// Returns:
   ///   [FutureOr<TokenPairDto>]: The token pair data transfer object containing access and refresh tokens.
-  FutureOr<TokenPairDto> register({required RegistrationParams params});
+  FutureOr<RegistrationDto> register({required RegistrationParams params});
 
   Future<int> firstAuth({required String phone});
 
@@ -89,12 +91,12 @@ final class AuthDataSourceImpl implements AuthDataSource {
   ///
   /// Throws: Exception if the login request fails.
   @override
-  Future<TokenPairDto> login({
+  Future<LoginDto> login({
     required LoginParams params,
   }) async {
     try {
       final response = await _dio.post('/auth/login', data: params.toData());
-      return TokenPairDto.fromJson(response.data as Map<String, dynamic>);
+      return LoginDto.fromJson(response.data as Map<String, dynamic>);
     } catch (e) {
       logger.error('LOGIN ERROR: $e');
       rethrow;
@@ -109,12 +111,12 @@ final class AuthDataSourceImpl implements AuthDataSource {
   ///
   /// Throws: Exception if the registration request fails.
   @override
-  Future<TokenPairDto> register({
+  Future<RegistrationDto> register({
     required RegistrationParams params,
   }) async {
     try {
       final response = await _dio.post('/auth/register', data: params.toData());
-      return TokenPairDto.fromJson(response.data as Map<String, dynamic>);
+      return RegistrationDto.fromJson(response.data as Map<String, dynamic>);
     } catch (e) {
       logger.error('REGISTRATION ERROR: $e');
       rethrow;

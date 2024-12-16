@@ -257,7 +257,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                         const Text('1 кг = '),
                                         Container(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 2, horizontal: 6),
+                                            vertical: 2,
+                                            horizontal: 6,
+                                          ),
                                           decoration: BoxDecoration(
                                             color: AppColors.pumpkin,
                                             borderRadius: BorderRadius.circular(2),

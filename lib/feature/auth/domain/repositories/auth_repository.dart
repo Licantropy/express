@@ -26,15 +26,16 @@ class AuthRepository {
 
   ///
   Future<void> login(LoginParams params) async {
-    final tokensDto = await _authDataSource.login(params: params);
-    final tokensModel = TokenPairModel.fromDto(tokensDto);
+    final loginDto = await _authDataSource.login(params: params);
+    final tokensModel = TokenPairModel.fromDto(loginDto.tokenPair);
     await _saveTokens(tokensModel);
   }
 
   ///
   Future<void> register(RegistrationParams params) async {
-    final tokensDto = await _authDataSource.register(params: params);
-    final tokensModel = TokenPairModel.fromDto(tokensDto);
+    final registrationDto = await _authDataSource.register(params: params);
+    final tokensModel = TokenPairModel.fromDto(registrationDto.tokenPair);
+    print(tokensModel);
     await _saveTokens(tokensModel);
   }
 
