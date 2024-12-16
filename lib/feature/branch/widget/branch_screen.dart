@@ -80,7 +80,6 @@ class _BranchScreenState extends State<BranchScreen> with ScreenWithoutNavigatio
             ],
           ),
           const SizedBox(height: 16),
-          // Conditionally show content based on current tab:
           if (_currentTabIndex == 0) _buildMyTab(),
           if (_currentTabIndex == 1) _buildAllBranches(),
         ],
@@ -293,7 +292,10 @@ class _BranchScreenState extends State<BranchScreen> with ScreenWithoutNavigatio
             width: 16,
           ),
           const SizedBox(width: 8),
-          Text(label, style: TextStyles.medium13),
+          Text(
+            label,
+            style: TextStyles.medium13,
+          ),
         ],
       ),
     );
