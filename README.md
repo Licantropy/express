@@ -2,11 +2,15 @@
 
 717 express
 
+Don't pay much attention to app layout, wrote in limited time in 2 days! 
+Im gonna refactor it soon
+
 
 
 
 App is still in development 
 this is demo below
+
 
 
 
